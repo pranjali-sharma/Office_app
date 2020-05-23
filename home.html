@@ -1,0 +1,70 @@
+<html>
+<head>
+     <!-- JQuery --> 
+     <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+
+     <script>
+         $(document).ready(function(){
+             console.log("reached js")
+             $('#sales-btn').click(function(){ window.location = '/infinity'});      
+             $('#ppc-btn').click(function(){ window.location = '/ppc'});           
+            console.log("clicked")
+         });
+
+     </script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+
+    <style>
+        .title{
+                background-color: rgb(241, 241, 241);
+                font-weight: 500;
+                font-size: 40px;
+                height: 150px;
+                padding-top: 40px;
+                padding-left: 30px;
+            }
+
+            .headers{
+                background-color:rgb(198, 224, 241);
+                font-size: 25px;
+                height: 180px;
+                padding-left: 30px;
+                padding-top: 15px;
+            }
+            .blurb{
+                font-size: 20px;
+            }
+          
+    </style>
+</head>
+
+<body>
+    <div class= "container">
+        <div class="row title">
+            Dunder Mifflin- Columbia University
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container headers">
+       
+            Welcome to the Columbia University branch of Dunder Mifflin!
+            <br>
+            <span class="blurb">Here, you can either log your sales or create a party planning
+                committee.<br> Press the respective button to complete your desired task.</span> 
+            <br>
+            <button id="sales-btn" class="btn btn-primary"> Log Sales</button>
+            <button id="ppc-btn" class="btn btn-primary"> Party-Planning Committee</button>
+    </div>
+
+
+
+
+
+</body>
+
+
+
+</html>

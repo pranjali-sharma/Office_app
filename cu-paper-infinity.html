@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <!-- JQuery --> 
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+      
+        <script type="text/javascript" src="{{ url_for('static', filename = 'cu-paper-infinity.js') }}"></script>
+
+        <script>
+            var sales = {{sales|tojson}} 
+            var clients = {{clients|tojson}} 
+            var client_len;
+            var reams_len;
+            var reams_txt;
+            var client_txt;
+            var client_id;
+            var salesperson="Salesperson";
+
+        </script>
+        <!-- bootstrap same as before --> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        
+        <style>
+            .title{
+                background-color: rgb(241, 241, 241);
+                font-weight: 500;
+                font-size: 40px;
+                height: 150px;
+                padding-top: 40px;
+                padding-left: 30px;
+            }
+            
+            .inputs{
+                padding-top: 30px;
+                padding-bottom: 0px;                
+                font-weight: 500;
+            }
+            #client_box{
+                width: 100%;
+            }
+            #reams_box{
+                width: 100%;
+            }
+            .but{
+                padding-left: 0px;
+            }
+            #client_warnings{
+                font-weight: bold;
+                color: red;
+            }
+            #reams_warnings{                
+                font-weight: bold;
+                color: red;
+            }
+            #sale{
+                padding: 10px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+        <div class= "container">
+            <div class="row title">
+                Columbia Paper Infinity
+            </div>
+        </div>
+
+        <div class="container">
+        <div class= "row inputs">
+            <div class="col-2">
+                Log your paper sales:
+            </div>
+            <div class="col-4">
+                <input id="client_box" type="text" placeholder="client">
+            </div>
+            <div class="col-2">
+                <input id="reams_box" type="text" placeholder="# reams">             
+
+            </div>
+            <div class="col-1 but">
+            <button id="submit-btn" class="btn btn-primary"> Submit</button>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row ">
+            <div class="col-2">
+            </div>
+            <div class="col-4">
+                <div id="client_warnings">Enter client name</div>    
+            </div>
+            <div class="col-2">
+                <div id="reams_warnings">Enter reams NUMBER</div>
+            </div>
+    </div>
+
+    <div class="container">
+        <div id="updates"> 
+        </div>
+
+    </div>
+    </body>

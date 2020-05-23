@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <!-- JQuery --> 
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script> <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
+        <script type="text/javascript" src="{{ url_for('static', filename = 'ppc.js') }}"></script>
+
+        <script>
+            var ppc_people = {{ppc_people|tojson}} 
+            var non_ppc_people={{non_ppc_people|tojson}}
+
+        </script>
+
+        <!-- bootstrap same as before --> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+        
+        <style>
+            
+            .title{
+                background-color: rgb(241, 241, 241);
+                font-weight: 500;
+                font-size: 40px;
+                height: 150px;
+                padding-top: 40px;
+                padding-left: 30px;
+            }
+
+            .headers{
+                background-color:rgb(198, 224, 241);
+                font-weight: 500;
+                font-size: 30px;
+                height: 75px;
+                padding-left: 30px;
+                padding-top: 15px;
+            }
+
+            .blank{
+                background-color: white;
+            }
+            #employees{
+                padding-top: 20px;
+                font-size: medium;
+                font-weight: 0;
+            }
+            #ppc{
+                padding-top: 20px;
+                font-size: medium;
+                font-weight: 0;
+            }
+            li{
+                border: 1px solid black;
+                width: 200px;
+                padding: 10px;
+
+            }
+            li:hover{
+                background-color:rgb(245, 245, 122) ;                
+                cursor:move;
+            }
+            .light{
+                background-color: rgb(75, 164, 224);
+            }
+            .dark{
+                background-color: rgb(9, 52, 145);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class= "container">
+            <div class="row title">
+                Party Planning Committee
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container ">
+        <div class="row ">
+        <div class= "col-3 headers" id="non_ppc_label">
+            Non- PPC
+            <br>
+            <div id="employees"></div>
+        </div>
+
+        <div class="col-1">
+
+        </div>
+        <div class= "col-3 headers" id="ppc_label">
+            PPC
+            <br>
+            <div id="ppc" ></div>
+        </div>
+    </div>
+</div>
+
+    </body>
+
+</html>
+
